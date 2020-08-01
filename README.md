@@ -7,3 +7,4 @@ Curated PCAPs that can be shared of events of interest to network defenders.
 Examples of attack traffic:
 
 + [masscan](./attacks/scanners/masscan)
++ [nmap](./attacks/scanners/nmap)
