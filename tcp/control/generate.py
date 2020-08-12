@@ -36,14 +36,14 @@ two_way_pkts = []
 
 for orig_flags in all_flag_combos:
     port = get_random_port()
-    orig_pkt = IP(src=src_ip, dst=dest_ip)/TCP(sport=port,dport=dest_port,flags="".join(orig_flags))
+    orig_pkt = Ether()/IP(src=src_ip, dst=dest_ip)/TCP(sport=port,dport=dest_port,flags="".join(orig_flags))
     one_way_pkts.append(orig_pkt)
 
     for resp_flags in all_flag_combos:
         port = get_random_port()
-        orig_pkt = IP(src=src_ip, dst=dest_ip)/TCP(sport=port,dport=dest_port,flags="".join(orig_flags))
+        orig_pkt = Ether()/IP(src=src_ip, dst=dest_ip)/TCP(sport=port,dport=dest_port,flags="".join(orig_flags))
         two_way_pkts.append(orig_pkt)
-        resp_pkt = IP(src=dest_ip, dst=src_ip)/TCP(sport=dest_port,dport=port,flags="".join(resp_flags))
+        resp_pkt = Ether()/IP(src=dest_ip, dst=src_ip)/TCP(sport=dest_port,dport=port,flags="".join(resp_flags))
         two_way_pkts.append(resp_pkt)
 
 wrpcap('one_way_all_flags.pcap', one_way_pkts)
