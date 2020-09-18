@@ -25,6 +25,14 @@ These PCAPs were artificially created with Scapy, via [generate.py](./generate.p
 
   **Description**: In each connection, one host (the client) sends a single packet to another host (the server) on TCP port 80, and then the server sends a single packet back. Each connection uses a different combination of TCP flags.
 
++ `exhaustive/one_way`
+
+  **Description**: PCAPs with a single packet, with the TCP flags as noted in the filename.
+
++ `exhaustive/two_way/**`
+
+  **Description**: PCAPs with two packets, one from each direction. These are stored in a subdirectory based on what the first host (the client) sent, e.g. `orig_sent_PRF`.
+
 ### Selected PCAPs
 
 These export only one or more packets from the PCAPs above.
