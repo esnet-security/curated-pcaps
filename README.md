@@ -10,6 +10,12 @@ Examples of attack traffic:
 + [nikto](./attacks/scanners/nikto)
 + [nmap](./attacks/scanners/nmap)
 
+## Protocols
+
+Examples of a specific protocol:
+
++ [whois](./protocols/whois)
+
 ## Simulated Traffic
 
 + [TCP control flags](./tcp/control)
